@@ -1,0 +1,9 @@
+.canvas {
+    background-color: #202020;
+    color: #eeeeee;
+
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+}
