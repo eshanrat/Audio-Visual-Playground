@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Canvas.css'
+import { Rectangle } from './drawables/Rectangle'
 
 export class Canvas extends React.Component {
     
@@ -32,12 +33,18 @@ export class Canvas extends React.Component {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.beginPath();
-        for (var i = 0; i <= canvas.width; i++) {
+        for (var i = - (canvas.width / 2); i <= (canvas.width / 2); i++) {
             var mx = i;
-            var my = (canvas.width / 2 * Math.sin(6.28/50 * (mx + this.state.count))) * Math.abs(mx - canvas.width /2) / canvas.width;
-            
-            var cx = i;
-            var cy = my + canvas.width / 4;
+
+            var wave = canvas.height / 4 * Math.sin(Math.PI / (1 / 8 * canvas.width) * (mx - this.state.count));
+            var filter = Math.pow(Math.E, -Math.abs(i / (canvas.width/2)));
+
+            var cir = Math.sqrt(1 - Math.pow(i / (canvas.width / 2), 2));
+
+            var my =  wave * filter * cir;
+
+            var cx = mx + canvas.width / 2;
+            var cy = my + canvas.height / 2;
             ctx.lineTo(cx, cy);
             ctx.moveTo(cx, cy);
         }
