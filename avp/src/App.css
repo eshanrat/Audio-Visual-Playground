@@ -1,5 +1,5 @@
 .background {
-  background-color: #202020;
+  background-color: #161616;
   text-align: center;
 
   width: 100%;
@@ -7,6 +7,12 @@
 
   position: absolute;
 
-  margin: 0;
-  padding: 0;
+  margin: 10 10 10 10;
+  padding: 10 10 10 10;
+}
+
+.wave {
+  position: relative;
+  margin: 10 10 10 10;
+  padding: 10 10 10 10;
 }

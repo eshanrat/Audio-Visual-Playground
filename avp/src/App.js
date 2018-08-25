@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { Canvas } from './canvas/Canvas'
+import P5Wrapper from 'react-p5-wrapper';
 
+import { Sound } from './Sound'
+
+import { player } from './player/player';
 
 class App extends Component {
   render() {
     return (
-      <div className = "background">
-        <Canvas width = {200} height = {200}/>
+      <div>
+        <div className = "background">
+          <div><P5Wrapper className = "player" sketch = { player } /></div>
+          <div><Sound source = "http://streaming.tdiradio.com:8000/house.mp3"/></div>
+        </div>
       </div>
     );
   }
