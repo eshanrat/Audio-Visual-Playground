@@ -13,6 +13,12 @@ export function player (canvas) {
   };
 
   canvas.draw = function () {
+
+      if (canvas.mouseY < 50 && canvas.pmouseY >= 50) {
+        wave.state = 'trans_to_line';
+      } else if (canvas.mouseY > 50 && canvas.pmouseY <= 50) {
+        wave.state = 'trans_to_wave';
+      }
     
       canvas.background("#161616");
       canvas.stroke(255);

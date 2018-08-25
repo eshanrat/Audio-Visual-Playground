@@ -4,10 +4,27 @@ export class Wave {
         this.dom = dom;
         this.ran = ran;
 
+        this.ampl = 1;
+        this.freq = 10;
         this.phase = 0;
+        this.state = 'wave';
 
         this.update = function() {
             this.phase++;
+
+            if (this.state == 'trans_to_line') {
+                if (this.ampl > 0) {
+                    this.ampl = this.ampl - 0.1;
+                } else {
+                    this.state == 'line';
+                }
+            } else if (this.state == 'trans_to_wave') {
+                if (this.ampl < 1) {
+                    this.ampl = this.ampl + 0.1;
+                } else {
+                    this.state == 'wave';
+                }
+            }
         }
 
         this.draw = function(canvas) {
@@ -19,12 +36,9 @@ export class Wave {
                 dy = 0,
                 cy = 0;
 
-            var ampl = 1;
-            var freq = 10;
-
             for (dx = 0; dx <= this.dom; dx++) {
                 cx = canvas.map(dx, 0, this.dom, -1, 1);
-                cy = signal(ampl, freq, this.phase, cx);
+                cy = signal(this.ampl, this.freq, this.phase, cx);
     
                 dy = canvas.map(cy, -1, 1, 0, this.ran);
                 canvas.vertex(dx, dy);
