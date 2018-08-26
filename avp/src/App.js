@@ -23,7 +23,7 @@ class App extends Component {
       <div>
         <div className = "background">
           <div><P5Wrapper className = "player" sketch = { player } /></div>
-          <div><Button style = "radioButton"/></div>
+          <div><Button styles = "radiobutton"/></div>
           <div><Sound source = "http://streaming.tdiradio.com:8000/house.mp3"/></div>
         </div>
       </div>
