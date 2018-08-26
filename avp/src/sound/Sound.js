@@ -26,7 +26,7 @@ export class Sound extends React.Component {
     render() {
       return (
         <div>
-          <div className = "button" onClick={ this.play }>{ 'So' }</div>
+          <button className = "button" onClick={ this.play }><span>♫</span></button>
         </div>
       );
    }
