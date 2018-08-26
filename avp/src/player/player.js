@@ -15,6 +15,7 @@ export function player (canvas) {
     vertDiv2 = new Line(4 * canvas.width / 5, 0, canvas.height/2);
   };
 
+  
   canvas.myCustomRedrawAccordingToNewPropsHandler = function (props) {
   };
 

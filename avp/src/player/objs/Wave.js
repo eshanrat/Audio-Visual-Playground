@@ -12,19 +12,19 @@ export class Wave {
         this.update = function() {
             this.phase++;
 
-            if (this.state == 'trans_to_line') {
+            if (this.state === 'trans_to_line') {
                 if (this.ampl > 0) {
                     this.ampl = this.ampl - 0.1;
                 } else {
                     this.ampl = 0;
-                    this.state == 'line';
+                    this.state = 'line';
                 }
-            } else if (this.state == 'trans_to_wave') {
+            } else if (this.state === 'trans_to_wave') {
                 if (this.ampl < 1) {
                     this.ampl = this.ampl + 0.1;
                 } else {
                     this.ampl = 1;
-                    this.state == 'wave';
+                    this.state = 'wave';
                 }
             }
         }

@@ -12,14 +12,14 @@ export class Line {
 
         this.update = function() {
         
-            if (this.state == 'trans_to_visible') {
+            if (this.state === 'trans_to_visible') {
                 if (this.height < setHeight) {
                     this.height = this.height + 4;
                 } else {
                     this.height = this.setHeight;
-                    this.state == 'visible';
+                    this.state = 'visible';
                 }
-            } else if (this.state == 'trans_to_invisible') {
+            } else if (this.state === 'trans_to_invisible') {
                 if (this.height > 0) {
                     this.height = this.height - 4;
                 } else {

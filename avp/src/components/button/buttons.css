@@ -1,0 +1,16 @@
+.radiobutton {
+    background: transparent;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 40px;
+    height: 50px;
+
+    border-top: none;
+    border-left: none;
+
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
