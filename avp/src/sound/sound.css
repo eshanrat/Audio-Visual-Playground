@@ -1,0 +1,27 @@
+.button {
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #202020;
+    border: 1px solid #303030;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    padding: 6px;
+    width: 40px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+
+    transition: all 0.5s;
+}
+
+.button:hover {
+    content: 'Conne';
+    width: 120px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+}
+
+.button:hover:before {
+    content: 'Connect to Live Radio';
+}

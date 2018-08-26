@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './sound.css'
+
 export class Sound extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,7 @@ export class Sound extends React.Component {
     render() {
       return (
         <div>
-          <button onClick={ this.play }>{ 'Start Radio' }</button>
+          <div className = "button" onClick={ this.play }>{ 'So' }</div>
         </div>
       );
    }

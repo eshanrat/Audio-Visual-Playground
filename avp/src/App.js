@@ -3,7 +3,7 @@ import './App.css';
 
 import P5Wrapper from 'react-p5-wrapper';
 
-import { Sound } from './Sound'
+import { Sound } from './sound/Sound.js'
 
 import { player } from './player/player';
 
