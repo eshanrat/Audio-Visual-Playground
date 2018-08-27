@@ -11,8 +11,16 @@
   padding: 10 10 10 10;
 }
 
-.wave {
-  position: relative;
-  margin: 10 10 10 10;
-  padding: 10 10 10 10;
+.player {
+  position: absolute;
+
+  top: 0px;
+  left: 0px;
+}
+
+.scope {
+  position: absolute;
+
+  top: 0px;
+  left: 200px;
 }
