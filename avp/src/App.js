@@ -6,11 +6,12 @@ import './components/button/buttons.css'
 
 
 //react components
+//eslint-disable-next-line
 import { Button } from './components/button/Button.js'
 
 
-//p5 canvas
-import P5Wrapper from 'react-p5-wrapper';
+//p5 canvas wrapper
+import { Whiteboard } from './Whiteboard';
 
 //sketches
 import { player } from './player/player';
@@ -21,8 +22,8 @@ class App extends Component {
   render() {
     return (
       <div className = "background">
-        <P5Wrapper className = "player" sketch = { player } />
-        <P5Wrapper className = "scope" sketch = { scope } />
+        <Whiteboard top = {0} left = {0} sketch = { scope } />
+        <Whiteboard top = {0} left = {0} sketch = { player } />
       </div>
     );
   }

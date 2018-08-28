@@ -6,6 +6,8 @@ export function player (canvas) {
   var wave;
   var vertDiv1, vertDiv2;
 
+  var state = 'wave';
+
   canvas.setup = function () {
     canvas.createCanvas(canvas.windowWidth, 100);
 
@@ -19,21 +21,26 @@ export function player (canvas) {
   canvas.myCustomRedrawAccordingToNewPropsHandler = function (props) {
   };
 
-  canvas.mousePressed = function() {
-    wave.state = 'trans_to_line';
-    vertDiv1.state = 'trans_to_visible';
-    vertDiv2.state = 'trans_to_visible';
-  }
+  canvas.mouseClicked = function() {
+    if (state === 'wave') {
+      wave.state = 'trans_to_wave';
+      vertDiv1.state = 'trans_to_invisible';
+      vertDiv2.state = 'trans_to_invisible';
 
-  canvas.mouseReleased = function() {
-    wave.state = 'trans_to_wave';
-    vertDiv1.state = 'trans_to_invisible';
-    vertDiv2.state = 'trans_to_invisible';
+      state = 'live';
+
+    } else if (state === 'live') {
+      wave.state = 'trans_to_line';
+      vertDiv1.state = 'trans_to_visible';
+      vertDiv2.state = 'trans_to_visible';
+
+      state = 'wave';
+    }
   }
 
   canvas.draw = function () {
     
-      canvas.background("#161616");
+      canvas.clear();
       canvas.stroke(255);
 
       wave.update();

@@ -16,15 +16,15 @@ export class Wave {
                 if (this.ampl > 0) {
                     this.ampl = this.ampl - 0.1;
                 } else {
-                    this.ampl = 0;
                     this.state = 'line';
+                    this.ampl = 0;
                 }
             } else if (this.state === 'trans_to_wave') {
                 if (this.ampl < 1) {
                     this.ampl = this.ampl + 0.1;
                 } else {
-                    this.ampl = 1;
                     this.state = 'wave';
+                    this.ampl = 1;
                 }
             }
         }
@@ -40,7 +40,7 @@ export class Wave {
 
             for (dx = 0; dx <= this.dom; dx++) {
                 cx = canvas.map(dx, 0, this.dom, -1, 1);
-                cy = signal(this.ampl, this.freq, this.phase, cx);
+                cy = signal(this.ampl, this.freq * this.ampl, this.phase, cx);
     
                 dy = canvas.map(cy, -1, 1, 0, this.ran);
                 canvas.vertex(dx, dy);
@@ -60,5 +60,5 @@ function sinusoid(ampl, freq, phase, offset, time) {
   }
 
   function signal(ampl, freq, phase, time) {
-    return sinusoid(ampl, freq, phase / (80 * freq), 0, time) * expwindow(time);
+    return sinusoid(ampl, freq, phase / 800, 0, time) * expwindow(time);
   }
